@@ -1,16 +1,13 @@
-import { P, Div, H1, Span } from "./js/index";
+import {Div, H1, P , } from './js/index'
 
-const root = document.querySelector("#root");
+const root = document.querySelector('#root');
 
-const p = new P({ text: "test" });
-const newP = new H1({ text: "test2" });
+const newDiv = new Div({}).addChild(new H1({text:'Hello World'})).addClass({className:'wazaaaa'});
 
-const div = new Div({});
+const para = new P({text:'This is a new paragraph', classList:['class1', 'class2']});
 
-const span = new Span({});
+newDiv.addChild(para);
 
-span.addChild(div.addChild(p).addChild(newP));
+root.appendChild(newDiv.getElement());
 
-console.log(div.toString());
-
-root.appendChild(span.getElement());
+console.log(newDiv.toString());

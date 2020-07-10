@@ -1,3 +1,8 @@
+interface iGenericContent {
+  classList?: Array<string>;
+  id?: string;
+}
+
 interface iTextContent {
   text?: string;
   classList?: Array<string>;
@@ -9,17 +14,25 @@ interface iClassContent {
   classList?: Array<string>;
 }
 
-abstract class TextContent {
+interface iMediaContent {
+  src?: string;
+  classList?: Array<string>;
+  id?: string;
+  alt?: string;
+}
+
+abstract class GenericContent {
   protected htmlElement: HTMLElement;
-  protected children: Array<TextContent>;
-  private parent: TextContent;
-  constructor(content: iTextContent, instanceItem: HTMLElement) {
-    this.htmlElement = instanceItem;
-    this.htmlElement.innerText = content.text || null;
-    if (content.classList != null || content.classList != undefined) {
-      content.classList.forEach((className) => {
+  protected children: Array<GenericContent>;
+  constructor(content: iGenericContent, instance: HTMLElement) {
+    this.htmlElement = instance;
+    if (content.classList != undefined) {
+      content.classList.forEach((className: string) => {
         this.htmlElement.classList.add(className);
       });
+    }
+    if (content.id != undefined) {
+      this.htmlElement.id = content.id;
     }
   }
   getElement(): HTMLElement | HTMLParagraphElement | HTMLHeadingElement {
@@ -28,8 +41,8 @@ abstract class TextContent {
   removeElement(): void {
     this.htmlElement.remove();
   }
-  addClass(classContent: iClassContent): void {
-    if (classContent.classList.length > 0) {
+  addClass(classContent: iClassContent): this {
+    if (classContent.classList != undefined &&classContent.classList.length > 0) {
       classContent.classList.forEach((className: string) => {
         this.htmlElement.classList.add(className);
       });
@@ -37,18 +50,29 @@ abstract class TextContent {
     if (classContent.className != undefined) {
       this.htmlElement.classList.add(classContent.className);
     }
+    return this
   }
   addChild(element: TextContent): this {
     this.htmlElement.appendChild(this.getElement());
     this.children.push(element);
-    element.addParent(this);
     return this;
   }
   toString(): string {
     return this.htmlElement.outerHTML;
   }
-  private addParent(element: TextContent): void {
-    this.parent = element;
+}
+
+abstract class TextContent extends GenericContent {
+  protected htmlElement: HTMLElement;
+  constructor(content: iTextContent, instanceItem: HTMLElement) {
+    const genericContent: iGenericContent = {
+      classList: content.classList,
+      id: content.id,
+    };
+    super(genericContent, instanceItem);
+    if (content.text != undefined) {
+      this.htmlElement.innerText = content.text;
+    }
   }
 }
 
@@ -169,4 +193,22 @@ export class Span extends LayoutElement {
   getElement(): HTMLSpanElement {
     return this.htmlElement;
   }
+}
+
+class MediaElement extends GenericContent {
+  htmlElement: HTMLImageElement | HTMLVideoElement | HTMLMediaElement;
+  constructor(content: iMediaContent, instance: HTMLElement) {
+    const genericContent: iGenericContent = {
+      classList: content.classList,
+      id: content.id,
+    };
+    super(genericContent, instance);
+    if (content.alt != undefined) {
+      this.htmlElement.setAttribute("alt", content.alt);
+    }
+  }
+}
+
+export class Img extends MediaElement{
+  
 }
