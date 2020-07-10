@@ -7,7 +7,7 @@
   "scripts": {
     "start": "tsc",
     "pub": "npx @appnest/readme generate && git add . && git commit -m 'updated version and published' && git push && npm version patch && npm publish",
-    "test": "parcel index.html",
+    "test": "parcel test/index.html",
     "push": "npx @appnest/readme generate && git add . && git commit -m 'wip' && git push",
     "readme": "npx @appnest/readme generate"
   },

@@ -1,4 +1,4 @@
-import {Div, H1, P } from './js/index'
+import {Div, H1, P } from '../js/index'
 
 const root = document.querySelector('#root');
 
