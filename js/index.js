@@ -1,18 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.H1 = void 0;
-class Element {
-    constructor() {
-        this.htmlElement = null;
-    }
-    getElement() {
-        return this.htmlElement;
-    }
-}
-class H1 extends Element {
-    constructor(content) {
-        super();
-        this.htmlElement = document.createElement("h1");
+exports.H2 = exports.H1 = void 0;
+class HeadingElement {
+    constructor(content, createdElement) {
+        this.htmlElement = createdElement;
         if (content.classList.length > 0) {
             content.classList.forEach((className) => {
                 this.htmlElement.classList.add(className);
@@ -20,5 +11,24 @@ class H1 extends Element {
         }
         this.htmlElement.id = content.id;
     }
+    getElement() {
+        return this.htmlElement;
+    }
+    deleteElement() {
+        this.htmlElement.remove();
+    }
+}
+class H1 extends HeadingElement {
+    constructor(content) {
+        const newElement = document.createElement("h1");
+        super(content, newElement);
+    }
 }
 exports.H1 = H1;
+class H2 extends HeadingElement {
+    constructor(content) {
+        const newElement = document.createElement("h2");
+        super(content, newElement);
+    }
+}
+exports.H2 = H2;
