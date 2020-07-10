@@ -1,12 +1,12 @@
 {
   "name": "vanilact",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "A vanilla JS library that makes creating and nesting HTML Elements a breeze",
   "main": "js/index.js",
   "types": "js/index.d.ts",
   "scripts": {
     "start": "tsc",
-    "lgit": "git add . && git commit -m 'updated version and published' && git push && npm version patch && npm publish"
+    "pub": "git add . && git commit -m 'updated version and published' && git push && npm version patch && npm publish"
   },
   "keywords": [
     "dom",
