@@ -18,8 +18,8 @@ class HeadingElement {
   getElement(): HTMLHeadingElement {
     return this.htmlElement;
   }
-  deleteElement(): void{
-      this.htmlElement.remove();
+  deleteElement(): void {
+    this.htmlElement.remove();
   }
 }
 
@@ -33,6 +33,34 @@ export class H1 extends HeadingElement {
 export class H2 extends HeadingElement {
   constructor(content: iHeadingContent) {
     const newElement: HTMLHeadingElement = document.createElement("h2");
+    super(content, newElement);
+  }
+}
+
+export class H3 extends HeadingElement {
+  constructor(content: iHeadingContent) {
+    const newElement: HTMLHeadingElement = document.createElement("h3");
+    super(content, newElement);
+  }
+}
+
+export class H4 extends HeadingElement {
+  constructor(content: iHeadingContent) {
+    const newElement: HTMLHeadingElement = document.createElement("h4");
+    super(content, newElement);
+  }
+}
+
+export class H5 extends HeadingElement {
+  constructor(content: iHeadingContent) {
+    const newElement: HTMLHeadingElement = document.createElement("h5");
+    super(content, newElement);
+  }
+}
+
+export class H6 extends HeadingElement {
+  constructor(content: iHeadingContent) {
+    const newElement: HTMLHeadingElement = document.createElement("h6");
     super(content, newElement);
   }
 }
