@@ -1,3 +1,3 @@
 <!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->Welcome to @dbidwell94/vanilact -- version 1.0.17
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/dbidwell94/vanilact?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues/dbidwell94/vanilact)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/dbidwell94/vanilact?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues/dbidwell94/vanilact?style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/dbidwell94/vanilact?style=for-the-badge) ![GitHub](https://img.shields.io/github/license/dbidwell94/vanilact?style=for-the-badge)
