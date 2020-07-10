@@ -1,6 +1,6 @@
 {
   "name": "vanilact",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A vanilla JS library that makes creating and nesting HTML Elements a breeze",
   "main": "index.js",
   "scripts": {
