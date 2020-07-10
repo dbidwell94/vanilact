@@ -1,6 +1,6 @@
 {
   "name": "@dbidwell94/vanilact",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "A vanilla JS library that makes creating and nesting HTML Elements a breeze",
   "main": "js/index.js",
   "types": "js/index.d.ts",
