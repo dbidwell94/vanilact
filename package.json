@@ -24,5 +24,8 @@
   },
   "dependencies": {
     "typescript": "^3.9.6"
+  },
+  "repository": {
+    "url": "https://github.com/dbidwell94/vanilact"
   }
 }

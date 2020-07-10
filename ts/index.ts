@@ -11,6 +11,8 @@ interface iClassContent {
 
 abstract class TextContent {
   protected htmlElement: HTMLElement;
+  protected children: Array<TextContent>;
+  private parent: TextContent;
   constructor(content: iTextContent, instanceItem: HTMLElement) {
     this.htmlElement = instanceItem;
     this.htmlElement.innerText = content.text || null;
@@ -38,10 +40,15 @@ abstract class TextContent {
   }
   addChild(element: TextContent): this {
     this.htmlElement.appendChild(this.getElement());
+    this.children.push(element);
+    element.addParent(this);
     return this;
   }
   toString(): string {
     return this.htmlElement.outerHTML;
+  }
+  private addParent(element: TextContent): void {
+    this.parent = element;
   }
 }
 
