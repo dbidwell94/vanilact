@@ -18,5 +18,8 @@
   "license": "ISC",
   "devDependencies": {
     "@appnest/readme": "^1.2.7"
+  },
+  "dependencies": {
+    "typescript": "^3.9.6"
   }
 }
