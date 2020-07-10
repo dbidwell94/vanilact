@@ -1,1 +1,1 @@
-{{ template:logo }}
+{{ template:name }}
