@@ -6,7 +6,6 @@
   "types": "js/index.d.ts",
   "scripts": {
     "start": "tsc",
-    "publish": "lgit patched-version-and-updated",
     "lgit": "git add . && git commit -m 'updated version and published' && git push && npm version patch && npm publish"
   },
   "keywords": [
