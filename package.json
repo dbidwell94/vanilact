@@ -6,7 +6,8 @@
   "types": "js/index.d.ts",
   "scripts": {
     "start": "tsc",
-    "pub": "git add . && git commit -m 'updated version and published' && git push && npm version patch && npm publish"
+    "pub": "git add . && git commit -m 'updated version and published' && git push && npm version patch && npm publish",
+    "test": "parcel index.html"
   },
   "keywords": [
     "dom",
@@ -17,7 +18,8 @@
   "author": "Devin Bidwell",
   "license": "ISC",
   "devDependencies": {
-    "@appnest/readme": "^1.2.7"
+    "@appnest/readme": "^1.2.7",
+    "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
     "typescript": "^3.9.6"

@@ -19,12 +19,12 @@ abstract class TextContent {
     instanceItem: HTMLElement | HTMLHeadingElement | HTMLParagraphElement
   ) {
     this.htmlElement = instanceItem;
+    this.htmlElement.innerText = content.text;
     if(content.classList != null || content.classList != undefined){
       content.classList.forEach(className => {
         this.htmlElement.classList.add(className);
       })
     }
-    this.htmlElement.innerText = content.text;
   }
   getElement(): HTMLElement | HTMLParagraphElement | HTMLHeadingElement {
     return this.htmlElement;
