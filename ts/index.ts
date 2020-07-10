@@ -39,6 +39,10 @@ abstract class TextContent {
       this.htmlElement.classList.add(classContent.className);
     }
   }
+  addChild(element: TextContent): this {
+    this.htmlElement.appendChild(this.getElement());
+    return this;
+  }
 }
 
 class HeadingElement extends TextContent {
