@@ -2,7 +2,7 @@
   "name": "vanilact",
   "version": "0.0.2",
   "description": "A vanilla JS library that makes creating and nesting HTML Elements a breeze",
-  "main": "index.js",
+  "main": "js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
