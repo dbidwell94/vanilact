@@ -15,7 +15,7 @@
   Import vanilact classes! Classes are named after HTML components
   and always start with a capital letter
 */
-import { Div, P, H1 } from "vanilact"; // Some of the classes available with vanilact
+import { Div, P, H1 } from "@dbidwell94/vanilact"; // Some of the classes available with vanilact
 
 // Define where you want to inject your components
 const injectionPoint = document.querySelector("#somewhereToInject");
