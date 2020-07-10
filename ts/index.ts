@@ -77,6 +77,10 @@ abstract class TextContent extends GenericContent {
       this.htmlElement.innerText = content.text;
     }
   }
+  updateText(content: string): this {
+    this.htmlElement.innerText = content;
+    return this;
+  }
 }
 
 class HeadingElement extends TextContent {
