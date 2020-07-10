@@ -96,7 +96,7 @@ export class H6 extends HeadingElement {
 }
 
 export class P extends TextContent {
-  htmlElement: HTMLParagraphElement;
+  protected htmlElement: HTMLParagraphElement;
   constructor(content: iTextContent) {
     const newElement: HTMLParagraphElement = document.createElement("p");
     super(content, newElement);
