@@ -42,7 +42,10 @@ abstract class GenericContent {
     this.htmlElement.remove();
   }
   addClass(classContent: iClassContent): this {
-    if (classContent.classList != undefined &&classContent.classList.length > 0) {
+    if (
+      classContent.classList != undefined &&
+      classContent.classList.length > 0
+    ) {
       classContent.classList.forEach((className: string) => {
         this.htmlElement.classList.add(className);
       });
@@ -50,7 +53,7 @@ abstract class GenericContent {
     if (classContent.className != undefined) {
       this.htmlElement.classList.add(classContent.className);
     }
-    return this
+    return this;
   }
   addChild(element: TextContent): this {
     this.htmlElement.appendChild(this.getElement());
@@ -206,9 +209,27 @@ class MediaElement extends GenericContent {
     if (content.alt != undefined) {
       this.htmlElement.setAttribute("alt", content.alt);
     }
+    if (content.src != undefined) {
+      this.htmlElement.setAttribute("src", content.src);
+    }
+  }
+  setSrc(src: string): this {
+    this.htmlElement.setAttribute("src", src);
+    return this;
+  }
+  setAlt(alt: string): this {
+    this.htmlElement.setAttribute("alt", alt);
+    return this;
   }
 }
 
-export class Img extends MediaElement{
-  
+export class Img extends MediaElement {
+  htmlElement: HTMLImageElement;
+  constructor(content: iMediaContent) {
+    const instance: HTMLImageElement = document.createElement("img");
+    super(content, instance);
+  }
+  getElement(): HTMLImageElement {
+    return this.htmlElement;
+  }
 }
