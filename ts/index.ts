@@ -1,5 +1,5 @@
 interface iTextContent {
-  text: string;
+  text?: string;
   classList?: Array<string>;
   id?: string;
 }
@@ -10,20 +10,14 @@ interface iClassContent {
 }
 
 abstract class TextContent {
-  protected htmlElement:
-    | HTMLParagraphElement
-    | HTMLHeadingElement
-    | HTMLElement;
-  constructor(
-    content: iTextContent,
-    instanceItem: HTMLElement | HTMLHeadingElement | HTMLParagraphElement
-  ) {
+  protected htmlElement: HTMLElement;
+  constructor(content: iTextContent, instanceItem: HTMLElement) {
     this.htmlElement = instanceItem;
-    this.htmlElement.innerText = content.text;
-    if(content.classList != null || content.classList != undefined){
-      content.classList.forEach(className => {
+    this.htmlElement.innerText = content.text || null;
+    if (content.classList != null || content.classList != undefined) {
+      content.classList.forEach((className) => {
         this.htmlElement.classList.add(className);
-      })
+      });
     }
   }
   getElement(): HTMLElement | HTMLParagraphElement | HTMLHeadingElement {
@@ -45,6 +39,9 @@ abstract class TextContent {
   addChild(element: TextContent): this {
     this.htmlElement.appendChild(this.getElement());
     return this;
+  }
+  toString(): string {
+    return this.htmlElement.outerHTML;
   }
 }
 
@@ -106,13 +103,63 @@ export class H6 extends HeadingElement {
   }
 }
 
-export class P extends TextContent {
+class ParagraphElement extends TextContent {
   protected htmlElement: HTMLParagraphElement;
+
+  constructor(content: iTextContent, instanceItem: HTMLHeadingElement) {
+    super(content, instanceItem);
+  }
+
+  getElement(): HTMLParagraphElement {
+    return this.htmlElement;
+  }
+  addChild(element: TextContent): this {
+    this.htmlElement.appendChild(element.getElement());
+    return this;
+  }
+}
+
+export class P extends ParagraphElement {
   constructor(content: iTextContent) {
     const newElement: HTMLParagraphElement = document.createElement("p");
     super(content, newElement);
   }
-  getElement(): HTMLParagraphElement {
+}
+
+class LayoutElement extends TextContent {
+  protected htmlElement: HTMLElement;
+
+  constructor(content: iTextContent, instanceItem: HTMLElement) {
+    super(content, instanceItem);
+  }
+
+  getElement(): HTMLElement {
+    return this.htmlElement;
+  }
+  addChild(element: TextContent): this {
+    this.htmlElement.appendChild(element.getElement());
+    return this;
+  }
+}
+
+export class Div extends LayoutElement {
+  protected htmlElement: HTMLDivElement;
+  constructor(content: iTextContent) {
+    const newElement: HTMLDivElement = document.createElement("div");
+    super(content, newElement);
+  }
+  getElement(): HTMLDivElement {
+    return this.htmlElement;
+  }
+}
+
+export class Span extends LayoutElement {
+  protected htmlElement: HTMLSpanElement;
+  constructor(content: iTextContent) {
+    const newElement: HTMLSpanElement = document.createElement("span");
+    super(content, newElement);
+  }
+  getElement(): HTMLSpanElement {
     return this.htmlElement;
   }
 }
