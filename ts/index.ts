@@ -108,6 +108,9 @@ abstract class TextContent extends GenericContent {
   }
 }
 
+// !!INSERT NEW HR CLASS HERE!!
+
+
 class HeadingElement extends TextContent {
   protected htmlElement: HTMLHeadingElement;
 

@@ -81,6 +81,7 @@ class TextContent extends GenericContent {
         return this;
     }
 }
+// !!INSERT NEW HR CLASS HERE!!
 class HeadingElement extends TextContent {
     constructor(content, instanceItem) {
         super(content, instanceItem);
