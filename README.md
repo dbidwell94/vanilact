@@ -11,7 +11,7 @@ Due to the complexity of Github NPM packages, vanilact
 has migrated to the standard NPM Repository. This means
 that to install vanilact it's as simple as running
 the command below!
-#### vanilact will be taken off the github npm repository
+#### vanilact will be taken off the github npm repository!
 
 ### To install as a dependency, run: npm install --save vanilact
 
