@@ -1,7 +1,7 @@
 <!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#welcome-to-pkgname----version-pkgversion)
 
-# ➤ Welcome to @dbidwell94/vanilact -- version 1.0.34
+# ➤ Welcome to @dbidwell94/vanilact -- version 1.0.36
 
 ### To install as a dependency, run: npm install --save dbidwell94/vanilact
 
