@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Img = exports.Span = exports.Div = exports.P = exports.H6 = exports.H5 = exports.H4 = exports.H3 = exports.H2 = exports.H1 = void 0;
+exports.Img = exports.Span = exports.Div = exports.A = exports.Strong = exports.P = exports.H6 = exports.H5 = exports.H4 = exports.H3 = exports.H2 = exports.H1 = void 0;
 class GenericContent {
     constructor(content, instance) {
         this.htmlElement = instance;
@@ -129,6 +129,34 @@ class P extends ParagraphElement {
     }
 }
 exports.P = P;
+class Strong extends TextContent {
+    constructor(content) {
+        const newElement = document.createElement("strong");
+        super(content, newElement);
+    }
+}
+exports.Strong = Strong;
+class AnchorElement extends TextContent {
+    constructor(content, instance) {
+        const textContent = {
+            classList: content.classList,
+            id: content.id,
+            text: content.text,
+        };
+        super(textContent, instance);
+    }
+    setHref(address) {
+        this.htmlElement.setAttribute("href", address);
+        return this;
+    }
+}
+class A extends AnchorElement {
+    constructor(content) {
+        const instance = document.createElement("a");
+        super(content, instance);
+    }
+}
+exports.A = A;
 class LayoutElement extends TextContent {
     constructor(content, instanceItem) {
         super(content, instanceItem);

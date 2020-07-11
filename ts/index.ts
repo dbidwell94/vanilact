@@ -3,10 +3,8 @@ interface iGenericContent {
   id?: string;
 }
 
-interface iTextContent {
+interface iTextContent extends iGenericContent {
   text?: string;
-  classList?: Array<string>;
-  id?: string;
 }
 
 interface iClassContent {
@@ -14,11 +12,13 @@ interface iClassContent {
   classList?: Array<string>;
 }
 
-interface iMediaContent {
+interface iMediaContent extends iGenericContent {
   src?: string;
-  classList?: Array<string>;
-  id?: string;
   alt?: string;
+}
+
+interface iAnchorContent extends iTextContent {
+  href?: string;
 }
 
 abstract class GenericContent {
@@ -161,6 +161,36 @@ export class P extends ParagraphElement {
   constructor(content: iTextContent) {
     const newElement: HTMLParagraphElement = document.createElement("p");
     super(content, newElement);
+  }
+}
+
+export class Strong extends TextContent {
+  constructor(content: iTextContent) {
+    const newElement: HTMLElement = document.createElement("strong");
+    super(content, newElement);
+  }
+}
+
+class AnchorElement extends TextContent {
+  constructor(content: iAnchorContent, instance: HTMLElement) {
+    const textContent: iTextContent = {
+      classList: content.classList,
+      id: content.id,
+      text: content.text,
+    };
+    super(textContent, instance);
+  }
+  setHref(address: string): this {
+    this.htmlElement.setAttribute("href", address);
+    return this;
+  }
+}
+
+export class A extends AnchorElement {
+  htmlElement: HTMLAnchorElement;
+  constructor(content: iAnchorContent) {
+    const instance = document.createElement("a");
+    super(content, instance);
   }
 }
 

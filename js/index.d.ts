@@ -2,20 +2,19 @@ interface iGenericContent {
     classList?: Array<string>;
     id?: string;
 }
-interface iTextContent {
+interface iTextContent extends iGenericContent {
     text?: string;
-    classList?: Array<string>;
-    id?: string;
 }
 interface iClassContent {
     className?: string;
     classList?: Array<string>;
 }
-interface iMediaContent {
+interface iMediaContent extends iGenericContent {
     src?: string;
-    classList?: Array<string>;
-    id?: string;
     alt?: string;
+}
+interface iAnchorContent extends iTextContent {
+    href?: string;
 }
 declare abstract class GenericContent {
     protected htmlElement: HTMLElement;
@@ -64,6 +63,17 @@ declare class ParagraphElement extends TextContent {
 }
 export declare class P extends ParagraphElement {
     constructor(content: iTextContent);
+}
+export declare class Strong extends TextContent {
+    constructor(content: iTextContent);
+}
+declare class AnchorElement extends TextContent {
+    constructor(content: iAnchorContent, instance: HTMLElement);
+    setHref(address: string): this;
+}
+export declare class A extends AnchorElement {
+    htmlElement: HTMLAnchorElement;
+    constructor(content: iAnchorContent);
 }
 declare class LayoutElement extends TextContent {
     protected htmlElement: HTMLElement;

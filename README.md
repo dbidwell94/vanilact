@@ -1,7 +1,7 @@
 <!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#welcome-to-pkgname----version-pkgversion)
 
-# ➤ Welcome to @dbidwell94/vanilact -- version 1.0.23
+# ➤ Welcome to @dbidwell94/vanilact -- version 1.0.24
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#to-install-as-a-dependency-run-npm-install---save-dbidwell94vanilact)
