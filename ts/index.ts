@@ -179,6 +179,9 @@ class AnchorElement extends TextContent {
       text: content.text,
     };
     super(textContent, instance);
+    if(content.href != undefined){
+      this.htmlElement.setAttribute('href', content.href);
+    }
   }
   setHref(address: string): this {
     this.htmlElement.setAttribute("href", address);
