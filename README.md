@@ -15,7 +15,7 @@ the command below!
 
 ### To install as a dependency, run: npm install --save vanilact
 
-Play around with vanilact ![here!](https://codesandbox.io/s/distracted-chebyshev-wtp91?file=/src/index.js)
+Play around with vanilact [here!](https://codesandbox.io/s/distracted-chebyshev-wtp91?file=/src/index.js)
 
 ### How to use?
 
