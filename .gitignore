@@ -116,3 +116,5 @@ dist
 .pnp.*
 
 # Ignore publishing directory
+js/
+
