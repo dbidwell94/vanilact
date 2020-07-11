@@ -1,6 +1,6 @@
 # Welcome to {{pkg.name}} -- version {{pkg.version}}
 
-## To install as a dependency: run npm install --save dbidwell94/vanilact
+### To install as a dependency, run: npm install --save dbidwell94/vanilact
 
 ### How to use?
 

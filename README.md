@@ -3,10 +3,7 @@
 
 # ➤ Welcome to @dbidwell94/vanilact -- version 1.0.26
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#to-install-as-a-dependency-run-npm-install---save-dbidwell94vanilact)
-
-## ➤ To install as a dependency: run npm install --save dbidwell94/vanilact
+### To install as a dependency, run: npm install --save dbidwell94/vanilact
 
 ### How to use?
 
