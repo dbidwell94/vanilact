@@ -21,9 +21,17 @@ interface iAnchorContent extends iTextContent {
   href?: string;
 }
 
+/**
+ * The base class in which all element classes are built on
+ */
 abstract class GenericContent {
   protected htmlElement: HTMLElement;
   protected children: Array<GenericContent>;
+  /**
+   * Creates a GenericContent class which holds an HTMLElement
+   * @param content A required object containing optional elements from iGenericContent
+   * @param instance The instance of any raw HTMLElement (passed down from child class)
+   */
   constructor(content: iGenericContent, instance: HTMLElement) {
     this.htmlElement = instance;
     if (content.classList != undefined) {
@@ -35,12 +43,22 @@ abstract class GenericContent {
       this.htmlElement.id = content.id;
     }
   }
+  /**
+   * Returns the HTMLElement (Needed for DOM injection)
+   */
   getElement(): HTMLElement | HTMLParagraphElement | HTMLHeadingElement {
     return this.htmlElement;
   }
+  /**
+   * Removes this HTMLElement from the DOM
+   */
   removeElement(): void {
     this.htmlElement.remove();
   }
+  /**
+   * Adds a new css class to the HTMLElement this Class represents
+   * @param classContent A required object of iClassContent type. Can be an object with a string or an object with a list of strings
+   */
   addClass(classContent: iClassContent): this {
     if (
       classContent.classList != undefined &&
@@ -55,11 +73,18 @@ abstract class GenericContent {
     }
     return this;
   }
-  addChild(element: TextContent): this {
-    this.htmlElement.appendChild(this.getElement());
+  /**
+   * Takes any takes any vanilact element classes and adds it as a nested child of this element
+   * @param element any vanilact element Class (ex. Div, A, P, H1, ...)
+   */
+  addChild(element: GenericContent): this {
+    this.htmlElement.appendChild(element.getElement());
     this.children.push(element);
     return this;
   }
+  /**
+   * Returns a raw HTML representation of this class with all children
+   */
   toString(): string {
     return this.htmlElement.outerHTML;
   }
@@ -179,8 +204,8 @@ class AnchorElement extends TextContent {
       text: content.text,
     };
     super(textContent, instance);
-    if(content.href != undefined){
-      this.htmlElement.setAttribute('href', content.href);
+    if (content.href != undefined) {
+      this.htmlElement.setAttribute("href", content.href);
     }
   }
   setHref(address: string): this {
