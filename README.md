@@ -1,7 +1,7 @@
 <!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#welcome-to-pkgname----version-pkgversion)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#welcome-to-pkgname)
 
-# ➤ Welcome to vanilact -- version 1.0.41
+# ➤ Welcome to vanilact!
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#update)

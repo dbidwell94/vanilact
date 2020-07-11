@@ -1,4 +1,4 @@
-# Welcome to {{pkg.name}} -- version {{pkg.version}}
+# Welcome to {{pkg.name}}!
 
 ## Update!
 Due to the complexity of Github NPM packages, vanilact
