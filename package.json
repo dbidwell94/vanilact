@@ -1,5 +1,5 @@
 {
-  "name": "@dbidwell94/vanilact",
+  "name": "vanilact",
   "version": "1.0.40",
   "description": "A vanilla JS library that makes creating and nesting HTML Elements a breeze",
   "main": "js/index.js",
@@ -28,8 +28,5 @@
   },
   "repository": {
     "url": "git://github.com/dbidwell94/vanilact.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
