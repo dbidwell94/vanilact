@@ -1,6 +1,13 @@
 # Welcome to {{pkg.name}} -- version {{pkg.version}}
 
-### To install as a dependency, run: npm install --save dbidwell94/vanilact
+## Update!
+Due to the complexity of Github NPM packages, vanilact
+has migrated to the standard NPM Repository. This means
+that to install vanilact it's as simple as running
+the command below!
+#### vanilact will be taken off the github npm repository
+
+### To install as a dependency, run: npm install --save vanilact
 
 ### How to use?
 
@@ -9,7 +16,7 @@
   Import vanilact classes! Classes are named after HTML components
   and always start with a capital letter
 */
-import { Div, P, H1 } from "@dbidwell94/vanilact"; // Some of the classes available with vanilact
+import { Div, P, H1 } from "vanilact"; // Some of the classes available with vanilact
 
 // Define where you want to inject your components
 const injectionPoint = document.querySelector("#somewhereToInject");

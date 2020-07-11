@@ -2,3 +2,4 @@ dist/
 .cache/
 blueprint.md
 test/
+tsconfig.json
