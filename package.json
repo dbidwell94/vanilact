@@ -14,8 +14,11 @@
   "keywords": [
     "dom",
     "react",
-    "HTML",
-    "TypeScript"
+    "html",
+    "typescript",
+    "front-end",
+    "react-dom",
+    "es6"
   ],
   "author": "Devin Bidwell",
   "license": "MIT",
