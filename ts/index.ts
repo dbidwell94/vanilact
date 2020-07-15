@@ -109,7 +109,16 @@ abstract class TextContent extends GenericContent {
 }
 
 // !!INSERT NEW HR CLASS HERE!!
-
+export class HR extends GenericContent {
+  protected htmlElement: HTMLDivElement;
+  constructor(content: iGenericContent) {
+    const newElement: HTMLElement = document.createElement("HR");
+    super(content, newElement);
+  }
+  getElement(): HTMLElement {
+    return this.htmlElement;
+  }
+}
 
 class HeadingElement extends TextContent {
   protected htmlElement: HTMLHeadingElement;

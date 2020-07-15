@@ -5,7 +5,11 @@ const root = document.querySelector("#root");
 const injectionDiv = new Div({})
 .addChild(
     new H1({text: 'Hello World!'})
-).addChild(
+)
+.addChild(
+    new HR({})
+)
+.addChild(
     new P({text: 'This is a test'})
 ).addChild(
     new A({href: 'http://www.google.com', text:'A link to google!'})
